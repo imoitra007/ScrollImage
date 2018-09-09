@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+/* Width of the content area */
+.body-content {    
+    padding-left: 500px !important;
+    padding-right: 0 !important;
+    max-width: 80%;
+    margin: 15px 4% 52px 4%;     
+}
+
+/* Card Style - Outer Card */
+.card-style-main {
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 2 0px;
+    background-color:#fff;
+    background: #fff;
+    box-shadow: 1px 1px 5px rgba(126,142,159,0.1);
+}
+
+.odd-card {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #E5EBEA;
+    background: #E5EBEA;
+    box-shadow: 1px 1px 5px rgba(126, 142, 159, 0.1);
+}

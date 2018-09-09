@@ -1,0 +1,13 @@
+<div class="text-center">
+  <div *ngFor="let item of listOfImage.items; let i = index">
+    <div *ngIf="i < totalImagetoDisplay">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div style="display: inline-block; padding-right:150px; padding-bottom: 80px;">
+          <app-imgcontainer [imageSource]="item.media.m" [uploadedBy]="item.author" [uploadedOn]="item.published" [tags]="item.tags">
+          </app-imgcontainer>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
