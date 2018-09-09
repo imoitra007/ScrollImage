@@ -10,12 +10,14 @@ import { ImglistcontainerComponent } from './imglistcontainer/imglistcontainer.c
 
 // Service Declaration
 import {AppService} from './app.service';
+import { CommaPipe } from './comma.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImgcontainerComponent,
-    ImglistcontainerComponent
+    ImglistcontainerComponent,
+    CommaPipe
  
   ],
   imports: [
