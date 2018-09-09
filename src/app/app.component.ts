@@ -11,7 +11,9 @@ export class AppComponent implements OnInit {
   public listOfImage  = [];
   constructor(public appService: AppService) { }
 
-  ngOnInit() {  }
+  ngOnInit() { 
+    
+   }
 
 
 }

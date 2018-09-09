@@ -29,7 +29,7 @@ export class ImglistcontainerComponent  {
 
   // Showing More Images on demand.
   showMoreImages() {
-    this.totalImagetoDisplay = this.totalImagetoDisplay + 3;
+    this.totalImagetoDisplay = this.totalImagetoDisplay + 6;
   }
 
   // Constructor
@@ -44,7 +44,7 @@ export class ImglistcontainerComponent  {
   getImages() {
     this.appService.getImages()
       .subscribe(
-        res => { this.listOfImage = res, console.log(this.listOfImage); },
+        res => { this.listOfImage = res; },
         err => { console.log(err), alert("Error in getting Request from server") }
       )
 

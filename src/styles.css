@@ -21,3 +21,8 @@
     background: #E5EBEA;
     box-shadow: 1px 1px 5px rgba(126, 142, 159, 0.1);
 }
+
+.zoom-moz {
+  transform: scale(2);
+  transform-origin: 0 0;
+}
