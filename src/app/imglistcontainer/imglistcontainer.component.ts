@@ -14,17 +14,16 @@ export class ImglistcontainerComponent  {
   // Scroll Event Listner.
   @HostListener("window:scroll", [])
   onWindowScroll() {  
-    debugger;
-    // if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && 
-    //     this.listOfImage != null) {
-    //  this.showMoreImages();
-    // }
-    const componentPosition = this.el.nativeElement.offsetTop
-    const scrollPosition = window.pageYOffset
-
-    if (scrollPosition >= componentPosition && this.listOfImage != null) {
-      this.showMoreImages();
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && 
+        this.listOfImage != null) {
+     this.showMoreImages();
     }
+    // const componentPosition = this.el.nativeElement.offsetTop
+    // const scrollPosition = window.pageYOffset
+
+    // if (scrollPosition >= componentPosition && this.listOfImage != null) {
+    //   this.showMoreImages();
+    // }
 
   }
 
