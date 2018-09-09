@@ -1,6 +1,6 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 800px;
+    max-width: 300px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -13,10 +13,11 @@
 
 .limited-text {
   white-space: nowrap;
-    width: 550px;
+    width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
+    padding-left: 10px;
  }
 
  /* Bottom left text */
@@ -27,6 +28,29 @@
   font-weight: 800px;
   font-size: 40px;
   color: white;
+}
+
+
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper:after {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.wrapper img {
+  width: auto;
+  height: 100%;
+  max-width: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 
 

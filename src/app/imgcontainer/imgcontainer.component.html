@@ -1,6 +1,6 @@
-<div class="card gallery">
+<!-- <div>
   <div style="position: relative;">
-    <img src={{imageSource}} alt="5Terre" width="600" height="500">
+    <img src={{imageSource}} >
     <div class="bottom-left">{{title}}</div>
   </div>
   <div class="desc" style="height:300px;font-size: x-large;font-weight: 700;">
@@ -8,5 +8,34 @@
     <p> This is a simple description that can be on an image.</p>
     <hr/>
     <p class="limited-text">{{tags | comma }}</p>
+  </div>style="width: 18rem; height: 20rem;"
+</div> -->
+<!-- 
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src={{imageSource}} style="width: 18rem; height: 20rem;">
+  <div>
+    <br/>
+    <p class="card-text">Uploaded by {{uploadedBy}}} on {{uploadedOn | date:'MMM d, y, h:mm'}}</p>
+  </div>
+  <hr/>
+  <div>
+      <p class=" card-text limited-text">{{tags | comma }}</p>
+  </div>
+</div> -->
+
+
+<div style="padding-bottom: 20px;" class="col-xs-6 col-md-4">
+  <div class="card">
+    <div class="wrapper">
+      <img class="card-img-top img-fluid" src={{imageSource}} alt="Card image cap">
+    </div>
+    <h4 class="bottom-left">Title</h4>
+    <div class="card-body">
+      <p class="card-text">
+        <br/>
+        Uploaded by {{uploadedBy}}} on {{uploadedOn | date:'MMM d, y, h:mm'}}</p>
+      <hr/>
+      <p class="limited-text">{{tags | comma }}</p>
+    </div>
   </div>
 </div>

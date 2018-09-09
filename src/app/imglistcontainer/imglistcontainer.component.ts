@@ -1,35 +1,44 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 import { AppService } from '../app.service';
-import { HostListener } from "@angular/core";
+
 
 @Component({
   selector: 'app-imglistcontainer',
   templateUrl: './imglistcontainer.component.html',
   styleUrls: ['./imglistcontainer.component.css']
 })
-export class ImglistcontainerComponent implements OnInit {
+export class ImglistcontainerComponent  {
   public listOfImage : Object = null;
   totalImagetoDisplay: number = 6;
 
   // Scroll Event Listner.
   @HostListener("window:scroll", [])
-  onWindowScroll() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-     this.showMoreImages();
+  onWindowScroll() {  
+    debugger;
+    // if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && 
+    //     this.listOfImage != null) {
+    //  this.showMoreImages();
+    // }
+    const componentPosition = this.el.nativeElement.offsetTop
+    const scrollPosition = window.pageYOffset
+
+    if (scrollPosition >= componentPosition && this.listOfImage != null) {
+      this.showMoreImages();
     }
+
   }
 
   // Showing More Images on demand.
   showMoreImages() {
-    this.totalImagetoDisplay = this.totalImagetoDisplay + 6;
+    this.totalImagetoDisplay = this.totalImagetoDisplay + 3;
   }
 
   // Constructor
-  constructor(public appService: AppService) {
+  constructor(public appService: AppService,public el: ElementRef) {
     this.getImages();
   }
 
-  ngOnInit() { }
+
 
  // Service call : Getting Images from API.
  // I have not created Model(Classes) for binding. Directly binding the JSON object from API.
