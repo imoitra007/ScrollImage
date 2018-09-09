@@ -19,6 +19,7 @@
     text-overflow: ellipsis;
     text-align: left;
     padding-left: 10px;
+    vertical-align: middle;
  }
 
  /* Bottom left text */
