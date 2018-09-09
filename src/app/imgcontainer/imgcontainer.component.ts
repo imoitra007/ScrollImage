@@ -13,6 +13,7 @@ export class ImgcontainerComponent implements OnInit {
   @Input() public uploadedBy: string;
   @Input() public uploadedOn: Date;
   @Input() public tags: string;
+  @Input() public title: string;
 
   constructor() { }
 
