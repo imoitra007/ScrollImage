@@ -14,14 +14,16 @@ export class ImglistcontainerComponent implements OnInit {
   }
   public listOfImage : Object = null;
   totalImagetoDisplay: number;
-  public position = 700;
+  public position = 750;
 
  // Scroll Event Listner.
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {  
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && 
+    console.log(window.innerHeight + window.scrollY);
+    if ((window.innerHeight + window.scrollY) >= this.position && 
         this.listOfImage != null) {
-     this.showMoreImages();
+          this.position = this.position * 2;
+          this.showMoreImages();
     }
   }
 
