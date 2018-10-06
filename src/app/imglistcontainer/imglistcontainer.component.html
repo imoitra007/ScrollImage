@@ -1,12 +1,24 @@
+<!-- <div *ngFor="let item of listOfImage.items">
+  <div>
+    <div>
+      <app-imgcontainer [imageSource]="item.media.m" [uploadedBy]="item.author" [uploadedOn]="item.published" [tags]="item.tags"
+        [title]="listOfImage.title">
+      </app-imgcontainer>
+    </div>
+  </div>
+</div> -->
 
-  <div *ngFor="let item of listOfImage.items; let i = index">
-    <div *ngIf="i < totalImagetoDisplay">
+<div *ngFor="let data of listOfImage">
+  <div *ngFor="let image of data.items">
+    <div>
       <div>
-        <div>
-          <app-imgcontainer [imageSource]="item.media.m" [uploadedBy]="item.author" [uploadedOn]="item.published" [tags]="item.tags"
-          [title]="listOfImage.title">
-          </app-imgcontainer>
-        </div>
+        <app-imgcontainer [imageSource]="image.media.m" 
+                          [uploadedBy]="image.author" 
+                          [uploadedOn]="image.published" 
+                          [tags]="image.tags"
+                          [title]="data.title">
+        </app-imgcontainer>
       </div>
     </div>
   </div>
+</div>

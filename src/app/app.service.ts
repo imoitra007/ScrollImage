@@ -14,7 +14,7 @@ export class AppService {
 
     return this.http.jsonp(apiURL, 'JSONP_CALLBACK').pipe(
       tap(
-        data => console.log(data[0])
+        data => data
       )
     );
   }

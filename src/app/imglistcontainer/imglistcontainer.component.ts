@@ -9,42 +9,28 @@ import { AppService } from '../app.service';
 })
 export class ImglistcontainerComponent implements OnInit {
   ngOnInit(): void {
-   
-   this.getImages();
+    this.getImages();
   }
-  public listOfImage : Object = null;
-  totalImagetoDisplay: number;
-  public position = 750;
 
- // Scroll Event Listner.
+  public listOfImage = [];
+
+  // Scroll Event Listner.
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {  
-    console.log(window.innerHeight + window.scrollY);
-    if ((window.innerHeight + window.scrollY) >= this.position && 
-        this.listOfImage != null) {
-          this.position = this.position * 2;
-          this.showMoreImages();
+  onScroll(): void {
+    if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 1)) {
+      this.getImages();
     }
   }
 
-
-
-  // Showing More Images on demand.
-  showMoreImages() {
-    this.totalImagetoDisplay = this.totalImagetoDisplay + 6;
-  }
-
   // Constructor
-  constructor(public appService: AppService,public el: ElementRef) {
-    this.totalImagetoDisplay = 6;
-  }
+  constructor(public appService: AppService) { }
 
- // Service call : Getting Images from API.
- // I have not created Model(Classes) for binding. Directly binding the JSON object from API.
+  // Service call : Getting Images from API.
+  // I have not created Model(Classes) for binding. Directly binding the JSON object from API.
   getImages() {
     this.appService.getImages()
       .subscribe(
-        res => { this.listOfImage = res;  },
+        res => { this.listOfImage.push(res) },
         err => { console.log(err), alert("Error in getting Request from server") }
       )
 
