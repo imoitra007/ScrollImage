@@ -11,5 +11,4 @@ Requiremet
 3. If we keep on scrolling to bottom, new images should keep on loading.
 4. This is similiar to showing products in Amazon.com 
 
-Thanks,
-Indradeep
+Developer: Indradeep Moitra
